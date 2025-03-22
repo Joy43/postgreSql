@@ -16,7 +16,12 @@ VALUES
 ('Alice', 'Smith', 22, 'B', 'Mathematics', 'alice.smith@example.com', '2002-09-15', 'A-', 'UK'),
 ('Bob', 'Johnson', 25, 'C', 'Physics', 'bob.johnson@example.com', '1999-03-22', 'B+', 'Canada'),
 ('Emily', 'Davis', 21, 'A', 'Biology', 'emily.davis@example.com', '2003-07-08', 'AB-', 'Australia'),
-('Michael', 'Brown', 23, 'B', 'Chemistry', 'michael.brown@example.com', '2001-12-01', 'O-', 'Germany');
+('Michael', 'Brown', 23, 'B', 'Chemistry', 'michael.brown@example.com', '2001-12-01', 'O-', 'Germany'),
+('Sophia', 'Wilson', 24, 'A', 'Engineering', 'sophia.wilson@example.com', '2000-08-14', 'A+', 'France'),
+('Daniel', 'Martinez', 22, 'C', 'Economics', 'daniel.martinez@example.com', '2002-04-25', 'B-', 'Spain'),
+('Olivia', 'Taylor', 26, 'B', 'Psychology', 'olivia.taylor@example.com', '1998-11-30', 'AB+', 'Italy'),
+('Ethan', 'Anderson', 21, 'A', 'Philosophy', 'ethan.anderson@example.com', '2003-06-17', 'O-', 'Japan'),
+('Mia', 'Thomas', 23, 'B', 'History', 'mia.thomas@example.com', '2001-10-05', 'A-', 'Netherlands');
 -- -student
 SELECT *FROM students;
 --  specific 
@@ -27,3 +32,16 @@ SELECT email as "student email" FROM students;
 SELECT * FROM students ORDER BY first_name ASC;
 SELECT country FROM students ORDER BY country;
 SELECT DISTINCT grade FROM students;
+-- where
+SELECT * FROM students
+WHERE country ='UK';
+-- -------AND USE
+SELECT * FROM students
+WHERE grade='A' AND course='Mathmatics' ;
+SELECT * FROM students
+WHERE (country='Australia' or country='UK') AND age=20 ;
+SELECT * FROM students
+-- WHERE age <=20 ;
+WHERE age !=20 ;
+SELECT *FROM students
+DELETE 
